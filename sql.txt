@@ -1,0 +1,10 @@
+SELECT CityID, CityName, Distance
+FROM Cities
+SELECT AirplaneID, AirplaneName, PilotName
+FROM Airplanes
+WHERE CityID = @CityID
+SELECT ScheduleID, FlightDate
+FROM FlightSchedules
+WHERE AirplaneID = @AirplaneID
+INSERT INTO Tickets (CityID, AirplaneID, ScheduleID, FlightType, Price)
+VALUES (@CityID, @AirplaneID, @ScheduleID, @FlightType, @Price)
